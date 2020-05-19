@@ -1,0 +1,10 @@
+{
+  "name": "apl/cofeeds",
+  "description": "",
+  "require": {
+      "ramsey/uuid": "^4.0"
+  },
+  "require-dev": {
+      "phalcon/devtools": "~4.0"
+  }
+}
