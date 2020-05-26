@@ -1,14 +1,35 @@
 <?php
 
 namespace CoFeeds\Modules\User\Models;
-use Phalcon\Mvc\Model;
 
-class Users extends Model{
-    public $id;
-    public $nickname;
-    public $email;
-    public $password;
-    public $created_at;
+
+class Users {
+    private $id;
+    private $nickname;
+    private $email;
+    private $password;
+    private $enabled;
+    private $createdAt;
+
+    public function __construct()
+    {
+// constructor buat bikin user
+    }
+
+    public function activate()
+    {
+        if ($this->enabled == false) {
+            $this->enabled = true;
+        }
+    }
+
+    public function authenticate($username, $password)
+    {
+        if ($this->username == $username) ...
+        // logic
+    }
+
+
 }
 
 ?>

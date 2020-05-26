@@ -14,6 +14,7 @@ class LoginService{
 
     public function execute($email ,$password, $controller){
         try{
+            //buat login
             $user = $this->repository->Login($email, $password, $controller);
         }catch (\Exception $exception){
             throw new \Exception();

@@ -4,7 +4,7 @@ namespace CoFeeds\Modules\User\Services;
 
 use CoFeeds\Modules\User\InMemory\UsersRepository;
 
-class RegisterService{
+class UserActivationService{
 
     private $repository;
 
@@ -12,12 +12,14 @@ class RegisterService{
         $this->repository = $repository;
     }
 
-    public function execute($nickname, $email ,$password, $security){
+    public function execute($id){
         try{
-            // untuk ngesave user baru
-            $user = new User(......);
+            //update status pasca aktivasi
+            $user = $this->repository->byId($id);
 
-            $this->repository->save($user);
+            $user->activate();
+
+            $this->repository->update($user);
         }catch (\Exception $exception){
             throw new \Exception();
         }
